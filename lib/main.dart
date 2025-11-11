@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+// run with flutter run -d web-server --web-port=8090
+// in web browser go to http://localhost:8090
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Per Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Per Flutter HHsdas Demo Home Page'),
     );
   }
 }
@@ -111,6 +115,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _counter += 5; // Add 5 instead of 1
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textStyle: const TextStyle(fontSize: 18),
+              ),
+              child: const Text('Add 5'),
             ),
           ],
         ),
